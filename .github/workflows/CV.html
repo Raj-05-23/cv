@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Curriculum Vitae</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Subtle radial gradient background */
+            background: radial-gradient(at top left, #e2e8f0, #f8fafc);
+            min-height: 100vh; /* Ensure full viewport height */
+        }
+        .section-title {
+            position: relative;
+            padding-bottom: 0.75rem;
+            margin-bottom: 2.5rem; /* Increased margin */
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #1a202c;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 4rem;
+            height: 4px;
+            background-color: #3b82f6;
+            border-radius: 9999px;
+        }
+        .card {
+            background-color: #ffffff;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05); /* More prominent shadow */
+            border-radius: 1rem; /* Slightly more rounded */
+            padding: 3rem; /* Increased padding */
+            margin-bottom: 2.5rem;
+            transition: transform 0.3s ease-in-out; /* Smooth transition for hover effects */
+        }
+        .card:hover {
+            transform: translateY(-5px); /* Lift card on hover */
+        }
+        .skill-tag {
+            background-color: #dbeafe;
+            color: #1e40af;
+            padding: 0.6rem 1.2rem; /* Slightly larger tags */
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+        }
+        .skill-tag:hover {
+            transform: translateY(-3px) scale(1.02); /* More pronounced lift and slight scale */
+            background-color: #93c5fd; /* Darker blue on hover */
+        }
+        .link-icon-group a {
+            transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+        }
+        .link-icon-group a:hover {
+            color: #2563eb;
+            transform: translateY(-2px); /* Lift icons on hover */
+        }
+        .profile-photo {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .profile-photo:hover {
+            transform: scale(1.05); /* Zoom in on hover */
+            box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.5); /* Blue glow on hover */
+        }
+        .email-copy-btn {
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+        }
+        .email-copy-btn:hover {
+            background-color: #eff6ff; /* Lighter background on hover */
+            transform: translateY(-1px);
+        }
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
+            }
+            .card {
+                padding: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+            .profile-photo {
+                width: 120px;
+                height: 120px;
+            }
+            h1 {
+                font-size: 3.5rem; /* Adjust heading size for smaller screens */
+            }
+            p {
+                font-size: 1rem; /* Adjust paragraph size */
+            }
+            .text-xl {
+                font-size: 1.125rem; /* Default text-xl size */
+            }
+            .text-2xl {
+                font-size: 1.5rem; /* Default text-2xl size */
+            }
+            .text-lg {
+                font-size: 1rem; /* Default text-lg size */
+            }
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-800">
+
+    <div class="container mx-auto px-4 py-10 max-w-4xl card my-10">
+
+        <!-- Header Section -->
+        <header class="text-center mb-12 pb-8 border-b border-gray-200">
+            <!-- Profile Picture -->
+            <img src="Self Portrait.jpg" alt="Your Profile Picture" class="profile-photo w-36 h-36 rounded-full mx-auto mb-6 object-cover border-4 border-blue-500 shadow-lg">
+
+            <h1 class="text-6xl md:text-7xl font-extrabold text-gray-900 mb-3">Rajdeep Kundu</h1>
+            <p class="text-2xl md:text-3xl text-blue-600 font-semibold mb-6">Video Editor</p>
+            <div class="flex flex-wrap justify-center gap-x-8 gap-y-3 text-gray-700 text-lg md:text-xl link-icon-group">
+                <span class="flex items-center">
+                    <svg class="w-6 h-6 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    Habra, WestBengal, Inidia
+                </span>
+                <span id="email-display" class="flex items-center email-copy-btn rounded-full px-3 py-1 -mx-3 -my-1">
+                    <svg class="w-6 h-6 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-1 13a2 2 0 01-2 2H6a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v14z"></path></svg>
+                    <span id="email-text">rajdeepatwork70@gmail.com</span>
+                </span>
+                <span class="flex items-center">
+                    <svg class="w-6 h-6 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                    +91 8597243480
+                </span>
+                <a href="www.linkedin.com/in/rajdeep-kundu-894873290" target="_blank" class="flex items-center text-blue-600 hover:underline">
+                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.064-2.065c0-1.134.938-2.063 2.064-2.063 1.132 0 2.064.929 2.064 2.063 0 1.132-.932 2.065-2.064 2.065zm-.012 8.218h3.555V9.021H5.325v6.63z"></path></svg>
+                    LinkedIn
+                </a>
+                <!-- <a href="https://github.com/yourprofile" target="_blank" class="flex items-center text-blue-600 hover:underline">
+                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.47.087.686-.217.686-.483 0-.237-.007-.866-.012-1.699-2.782.602-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.618.069-.606.069-.606 1.003.07 1.531 1.032 1.531 1.032.892 1.529 2.341 1.088 2.91.831.091-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.953 0-1.091.39-1.984 1.029-2.682-.103-.253-.446-1.272.097-2.65 0 0 .84-.268 2.75 1.022A9.606 9.606 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.29 2.747-1.022 2.747-1.022.546 1.379.202 2.398.099 2.65a3.894 3.894 0 011.029 2.682c0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.217.579.695.482C21.133 20.197 24 16.442 24 12.017 24 6.484 19.522 2 14 2h-2z"></path></svg>
+                    GitHub
+                </a> -->
+            </div>
+            <!-- Download CV Button -->
+            <div class="mt-8">
+                <a href="Rajdeep_cv.pdf" download class="inline-block bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-bold py-3 px-8 rounded-full transition duration-300 ease-in-out transform hover:scale-105 shadow-xl hover:shadow-2xl">
+                    Download CV
+                </a>
+            </div>
+        </header>
+
+        <!-- About Me / Summary Section -->
+        <section class="mb-10">
+            <h2 class="section-title">About Me</h2>
+            <p class="text-lg md:text-xl leading-relaxed text-gray-700">
+                Motivated and creative video editor with experience in making clean, engaging content. Known for simple, effective edits that match the vision and connect with viewers. Passionate about telling stories through smooth and meaningful visuals.
+            </p>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="mb-10">
+            <h2 class="section-title">Experience</h2>
+
+            <div class="mb-8 p-6 bg-white rounded-lg shadow-sm border border-gray-100 transition duration-300 ease-in-out hover:shadow-lg hover:border-blue-200">
+                <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-1">Video Editor, <span class="text-blue-600">OtakuKart</span></h3>
+                <p class="text-gray-600 text-md mb-3">Remote | September 2023 – Present</p>
+                <ul class="list-disc list-inside text-gray-700 space-y-2">
+                    <li>Edited and delivered over <strong class="text-blue-700">1000+ short-form videos</strong>, boosting viewer engagement by up to <strong class="text-blue-700">30%</strong>.</li>
+                    <li>Helped grow the anime-focused YouTube channel to over <strong class="text-blue-700">2.5M+ subscribers in just one year</strong> through consistent and impactful edits.</li>
+                    <li>Managed multiple projects from idea to final cut, ensuring <strong class="text-blue-700">on-time delivery</strong> and strong visual appeal.</li>
+                    <li>Worked closely with writers and voice artists to maintain brand tone and <strong class="text-blue-700">increase audience retention</strong>.</li>
+                    <li>Created Facebook news posts covering <strong class="text-blue-700">anime, manga, movies, and celebrity updates</strong> to support cross-platform engagement.</li>
+                    <li>Utilized <strong class="text-blue-700">Premiere Pro, After Effects, and CapCut</strong> to create scroll-stopping edits optimized for YouTube and social media.</li>
+                </ul>
+
+            </div>
+
+            <div class="mb-8 p-6 bg-white rounded-lg shadow-sm border border-gray-100 transition duration-300 ease-in-out hover:shadow-lg hover:border-blue-200">
+                <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-1">Video Editor(Intern), <span class="text-blue-600">OtakuKart</span></h3>
+                <p class="text-gray-600 text-md mb-3">Remote | June 2023 – September 2023</p>
+                <ul class="list-disc list-inside text-gray-700 space-y-2">
+                <li>Produced over <strong class="text-blue-700">500+ short-form videos</strong> during a 3-month internship, enhancing overall engagement.</li>
+                <li>Contributed to channel growth, helping reach <strong class="text-blue-700">2.5M+ subscribers</strong> with fast-paced, attention-grabbing edits.</li>
+                <li>Collaborated with the creative team to ensure <strong class="text-blue-700">brand consistency</strong> and viewer retention.</li>
+                <li>Delivered edits optimized for <strong class="text-blue-700">YouTube and social media</strong> platforms with smooth turnaround.</li>
+            </ul>
+
+            </div>
+
+
+
+        </section>
+
+        <!-- Education Section -->
+        <section class="mb-10">
+            <h2 class="section-title">Education</h2>
+
+            <!-- Degree 1 -->
+            <div class="mb-8 p-6 bg-white rounded-lg shadow-sm border border-gray-100 transition duration-300 ease-in-out hover:shadow-lg hover:border-blue-200">
+                <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-1">Bachelor of Computer Application, <span class="text-blue-600">Maulana Abul Kalam Azad University of Technology</span></h3>
+                <p class="text-gray-600 text-md mb-3">Barasat, WestBengal | 2023-2027</p>
+                <ul class="list-disc list-inside text-gray-700 space-y-2">
+                    <li>Major: Web Development</li>
+                    <li>Relevant Coursework: <strong class="text-blue-700">Complete Web & Mobile Designer: UI/UX, Figma, +more (ZTM, Platform: Udemy) ,Softskills and Development (NPTEL)</strong></li>
+                </ul>
+            </div>
+
+            <!-- Degree 2 (Optional) -->
+            
+            <div class="mb-8 p-6 bg-white rounded-lg shadow-sm border border-gray-100 transition duration-300 ease-in-out hover:shadow-lg hover:border-blue-200">
+                <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-1">12th Board Exam, <span class="text-blue-600">WBCHSE</span></h3>
+                <p class="text-gray-600 text-md mb-3">Habra, WestBengal | 2023</p>
+                <ul class="list-disc list-inside text-gray-700 space-y-2">
+                    <li>Percetage: 76%</li>
+                </ul>
+            </div>
+            
+            <div class="mb-8 p-6 bg-white rounded-lg shadow-sm border border-gray-100 transition duration-300 ease-in-out hover:shadow-lg hover:border-blue-200">
+                <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-1">10th Board Exam, <span class="text-blue-600">WBBSE</span></h3>
+                <p class="text-gray-600 text-md mb-3">Habra, WestBengal | 2021</p>
+                <ul class="list-disc list-inside text-gray-700 space-y-2">
+                    <li>Percetage: 74%</li>
+                </ul>
+            </div>
+           
+        </section>
+
+        <!-- Skills Section -->
+        <section class="mb-10">
+            <h2 class="section-title">Skills</h2>
+            <div class="flex flex-wrap gap-3 text-lg md:text-xl">
+                <span class="skill-tag">Adobe After Effects</span>
+                <span class="skill-tag">Adobe Premiere Pro</span>
+                <span class="skill-tag">Adobe Photoshop</span>
+                <span class="skill-tag">Adobe Illustrator</span>
+                <span class="skill-tag">CapCut</span>
+                <span class="skill-tag">Figma</span>
+                <span class="skill-tag">Social-Media Management</span>
+            </div>
+        </section>
+
+        <!-- Projects Section (Optional but highly recommended) -->
+        <!-- <section class="mb-10">
+            <h2 class="section-title">Projects</h2>
+
+            <div class="mb-8 p-6 bg-white rounded-lg shadow-sm border border-gray-100 transition duration-300 ease-in-out hover:shadow-lg hover:border-blue-200">
+                <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-1">Project Name <a href="https://github.com/yourproject" target="_blank" class="text-blue-600 hover:underline text-lg ml-2">(GitHub Link)</a></h3>
+                <p class="text-gray-600 text-md mb-3">Technologies Used: <strong class="text-blue-700">Tech1, Tech2, Tech3</strong></p>
+                <p class="text-gray-700 leading-relaxed">
+                    Brief description of the project. Explain its purpose, your role, and the key features or challenges overcome.
+                    Quantify impact if possible (e.g., "Improved data processing speed by 15%").
+                </p>
+            </div>
+
+
+            <div class="mb-8 p-6 bg-white rounded-lg shadow-sm border border-gray-100 transition duration-300 ease-in-out hover:shadow-lg hover:border-blue-200">
+                <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-1">Another Project <a href="https://yourproject.com" target="_blank" class="text-blue-600 hover:underline text-lg ml-2">(Live Demo)</a></h3>
+                <p class="text-gray-600 text-md mb-3">Technologies Used: <strong class="text-blue-700">Tech4, Tech5</strong></p>
+                <p class="text-gray-700 leading-relaxed">
+                    Another brief description. Focus on what you learned or how it showcases your skills.
+                </p>
+            </div>
+        </section> -->
+
+        <!-- Footer -->
+        <footer class="text-center text-gray-500 text-sm pt-8 border-t border-gray-200">
+            <p>&copy; 2025 Rajdeep Kundu. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const emailDisplay = document.getElementById('email-display');
+            const emailText = document.getElementById('email-text');
+            const originalEmailText = emailText.textContent; // Store original email text
+
+            if (emailDisplay && emailText) {
+                emailDisplay.addEventListener('click', function() {
+                    const email = emailText.textContent;
+                    // Use document.execCommand for clipboard copy due to iframe restrictions
+                    const tempInput = document.createElement('input');
+                    document.body.appendChild(tempInput);
+                    tempInput.value = email;
+                    tempInput.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(tempInput);
+
+                    // Provide visual feedback
+                    emailText.textContent = 'Copied!';
+                    setTimeout(() => {
+                        emailText.textContent = originalEmailText; // Revert after a short delay
+                    }, 1500);
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
